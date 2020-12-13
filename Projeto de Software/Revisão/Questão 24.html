@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>Cronômetro</h1>
+	<div id="cronometro">00:00:00</div>
+	<button id="start">Start</button>
+	<button id="stop">Start</button>
+	<button id="reset">Start</button>
+	
+	<script type="text/javascript">
+		var segundos = 0;
+		var minutos = 0;
+		var horas = 0;
+		var contando = true;
+
+		let cronometro = document.querySelector("#cronometro");
+		let start = document.querySelector("#start");
+		let stop = document.querySelector("#stop");
+		let reset = document.querySelector("#reset");
+		start.disabled = true;
+		stop.innerHTML = "Stop";
+		reset.innerHTML = "reset";
+
+		reset.onclick = function(){
+			segundos = 0;
+			minutos = 0;
+			horas = 0;
+			renderizaTempo();
+		}
+
+		start.onclick = function(){contando = true; start.disabled = true; stop.disabled = false;}
+		stop.onclick = function(){contando = false; start.disabled = false; stop.disabled = true;}
+
+		function atualizaTempo(){
+			if (!contando) {return false;}
+			segundos++;
+			if (segundos > 59){segundos = 0; minutos++;}
+			if (minutos > 59){minutos = 0; horas++;}
+		}
+
+		function renderizaTempo(){
+			let h = horas;
+			if (h < 10){h = "0"+h;}
+			let m = minutos;
+			if (m < 10){m = "0"+m;}
+			let s = segundos;
+			if (s < 10){s = "0"+s;}
+			cronometro.innerHTML = h+":"+m+":"+s;
+		}
+		
+		setInterval(function(){
+			atualizaTempo();
+			renderizaTempo();
+		},1000);
+	</script>
+</body>
+</html>

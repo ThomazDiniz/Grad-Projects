@@ -1,0 +1,98 @@
+1 - No JavaScript do browser, o que é o objeto document?
+O objeto que representa a página exibida pelo browser, o nome/variável global que referencia o objeto a que chamamos de DOM (ou Document Object Model), o objeto que provê acesso via JavaScript a  página renderizada, permitindo que seja manipulada e modificada dinamicamente;
+
+
+2 - Explique as funções da API do DOM listadas abaixo, indicando sua assinatura e funcionalidade.
+getElementById(id)
+	Retorna um elemento definido com o id 'id'.
+getElementsByClassName(class)
+	Retorna um conjunto de elementos definidos com a classe 'class'.
+querySelector(seletor)
+	Retorna o primeiro elemento definido com o seletor de query 'seletor'. Essa seleção utiliza a mesma notação utilizada em css e pode ser usada com '.class' para seleconar classe, '#id' para selecionar um id.
+querySelectorAll(seletor)
+	Retorna um conjunto de elementos definidos com o seletor de query seletor. Essa seleção utiliza a mesma notação utilizada em css e pode ser usada com '.class' para seleconar classe, '#id' para selecionar um id. Funciona semelhante a querySlector, mas pode retornar mais de um elemento em sua array de elementos.
+elemento.appendChild(node)
+	Adicioná um nó definido por node dinamicamente ao elemento que está chamando esta função.
+elemento.getAttribute(atributo)
+	Retorna o valor do atributo do elemento.
+element.innerHTML
+	É a variável que define o que está dentro daquele elemento.
+	
+
+5 - O que é a Selectors API?
+Selectors APIR é uma api fornecida pelo browser para desenvolvimento de aplicações front end que consiste em dois métodos: querySelector() e querySelectorAll(). Ao utilizar estes métodos, o navegador faz uma busca nos filhos dos elementos para encontrar um conjunto de elementos que correspondem a pesquisa do seletor indicado na função.
+
+Query selector retorna o primeiro elemento encontrado que atende ao seletor e retorna null se nada for encontrado. Já o All retona uma lista dos elementos e se nenhum for encontrado, é retornada uma lista vazia.
+
+ - Demonstre 5 formas de seletores
+
+```javascript
+let $p = document.querySelector("p");
+let $fluxograma = document.querySelector("#fluxograma");
+let $warnings = document.querySelectorAll(".warning");
+let $warn_h1 = document.querySelectorAll("h1.warning");
+let $footer_p = document.querySelector("footer > p");
+
+
+
+6 - Qual a função do event loop no sistema de runtime de JavaScript?
+	O event Loop é responsável por ficar observando o a fila de mensagens enquanto tenha métodos a serem executados e ir jogando estes métodos na pilha de execução.
+
+7 - Considere a função abaixo.
+	function seila() {
+	  setTimeout(function () {
+	    alert("oi");
+	    seila();
+	  }, 5000);
+	}
+	a - Explique o que a função seila faz e como funciona.
+	A função seila é responsável por colocar na fila de mensagens (registrando um callback) para daqui a 5 segundos a execução de exibição de uma mensagem "oi" e chamar ela mesma novamentede tal forma que essa função será executada a cada 5 segundos.
+	b - A função é recursiva? Explique.
+	Não existe recursão propriamente dito neste exemplo, visto que a função não chama ela mesma na própria pilha de execução, mas o frame de execução está sendo agendado para um futuro frame de execução. Desta forma, mesmo que a função possua recursão dentro do seu código (A função chama ela mesma), é uma recursão sintática.
+
+8 - Diferencie Herança Clássica de Herança prototipal
+	Herança clássica é uma forma baseada em classes de linguagens como java ou python. Uma classe pode herdar propriedades de outra classe (ou classes, dependendo da linguagem). Assim, instâncias da classe herdarão as propriedades da classes ancestrais.
+	Já herança prototipal é uma relação dinâmica entre objetos. Todo objeto possui um protótipo e, caso ele não possua certo método ou atributo, ele tentará "resolver" com o seu protótipo, que nada mais é do que outro objeto que responderá pelo antecessor. Desta forma, existe uma delegação comportamental entre os objetos, onde cada objeto delega ao seu protótipo caso não tenha como fazê-lo. Neste caso a herança pode ser resolvida em tempo de execução, diferentemente da herança clássica.
+
+9 - Função síncrona é uma função que é executada de acordo com o fluxo de execução normal do código. De tal forma que um método é executado depois do outro de maneira linear temporal. Enquanto uma função assíncrona pode ser executada depois ou mesmo concorrentemente enquanto outros códigos são executados. No caso de javascript, funções assíncronas podem tanto serem executadas em outras threads quanto podem ser jogadas para um frame de execução no futuro.
+
+
+
+14 - Explique o algoritimo de seleção CSS
+
+É a lógica pela qual o browser resolve os conflitos de múltiplas regras, que
+pelas especificações dadas pelos seletores se aplicam simultaneamente a um
+mesmo elemento. 
+
+As regras básicas são:
+1. Múltiplas declarações sem conflito se fundem.
+2. Declarações são herdadas do DOM
+3. O último conflito se sobrepõe
+4. Declarações mais específicas se sobrepõem
+
+16 - Explique Box Model
+	É o modelo de renderização dos elementos de um documento html. Todos os elementos possuem Margin, Padding, Content e Border.
+	Margin é o espaço entre os elementos.
+	Padding é o espao entre a border e o content.
+	Border é a linha visualizável e ajustável que indica onde está o conteúdo.
+	Content é o conteúdo propriamente dito.
+
+18 - Qual a diferença semântica entre os elementos article e setion de HTML5?
+A diferença é únicamente de natureza semântica. Um "article" tende a representar uma parte autocontida de um doc html que pode ser extraído e colocado em um contexto diferente. Assim como um artigo que pode ser referenciado ou copiado dependendo da situação. Já uma seção ela representa parte de um todo e pode ou não fazer sentido quando copiada, já que é apenas um pedaço do conteúdo.
+
+19 - Qual a diferença entre usar elementos do tipo h1, h2, etc e usar section? O uso de um dispensa o outro?
+H1 e H2 são marcadores de títulos, mas não indicam o início e fim de uma seção. Como fazem Section e article. Por isso é importante utilizar estes outros. A combinação dos marcadores permitem dar semântica apropriada ao conteúdo.
+
+20 - Qual a diferença entre elementos do tipo Flow e Phrasing em HTML5?
+Grosseiramente, flow = block e phrasing = inline.
+No caso de flow eles são colocados na ´próxima linha do último elemento que foi renderizado, já o elemento do tipo phrasing é colocado na mesma linha do último elemento (desde que este também seja do tipo phrasing). H1, p, section são elementos, por exemplo, que serão colocados na próxima linha quando renderizado, pois são do tipo flow.
+
+21 - Explique os seletores abaixo.
+p - Seleciona todas as tags do tipo parágrafo.
+.warning > h2	- Seleciona todas as tags h2 que são filhas imediatas de qualquer elemento com a classe "warning"
+.warning p 	- Seleciona todas as tags p que são descendentes de qualquer elemento com a classe "warning"
+h1:hover 	- Seleciona qualquer tag h1 por onde o mouse está em cima
+section:: 	- Seletor errado.
+
+23 - Explique como scripts externos referenciados por elementos script são lidos e executados em relação ao parsing dos demais elementos de uma página?
+

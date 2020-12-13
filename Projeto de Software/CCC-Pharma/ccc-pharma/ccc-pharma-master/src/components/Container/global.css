@@ -1,0 +1,10 @@
+#mainContainer {
+    margin-top: 76px;
+    padding: 2em;
+}
+
+@media (min-width: 1001px) {
+    #mainContainer {
+        padding-left: 20em;
+    }
+}

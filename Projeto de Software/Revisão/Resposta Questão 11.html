@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!-- saved from url=(0071)http://www.dsc.ufcg.edu.br/~dalton/projsw/exercicios3/q11/resposta.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title></title>
+</head>
+<body>
+  <pre>
+        2018-12-12T17:42Z
+        Wednesday
+      </pre>
+
+  <script>
+    let $pre = document.querySelector("pre");
+    function ok(dados) {
+      $pre.innerText = `
+        ${dados.currentDateTime}
+        ${dados.dayOfTheWeek}
+      `;
+    }
+
+    let url = "http://worldclockapi.com/api/json/utc/now";
+    fetch(url)
+    .then(r => r.json())
+    .then(ok);
+  </script>
+
+
+</body></html>

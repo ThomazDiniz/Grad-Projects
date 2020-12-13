@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+    <title>Project: Word game </title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+</head>
+<body>
+	<div class="container">
+        <h1>Word game!</h1>
+        <form id="joke-form">
+            <label>
+                Desembaralhe as letras e forme a palavra:<br />
+                <span class="scrambled"></span> <br />
+                <input id="resposta" class="input-resp" type="text" size="10" Placeholder="Resposta"/><br />
+            </label>
+            <button id="submit" type="submit" class="btn-resp">Check</button><br />
+            <input id="usuario" type="text" class="input-resp" size="10" placeholder="Usuário" />
+        </form>
+        <section class = "placar">
+            <table>
+                <thead>
+                <tr>
+                    <td>Jogador</td>
+                    <td> Pontuação </td>
+                </tr>
+                </thead>
+            <tbody>
+                
+            </tbody>
+            </table>
+        </section>
+    </div>
+	<script src="js/jquery-3.1.1.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

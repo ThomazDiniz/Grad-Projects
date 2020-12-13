@@ -1,0 +1,26 @@
+body{
+	backgroound:red;
+}
+
+header{
+	text-align: center;
+	font-size: 64px;
+	transition-duration: 3s;
+	color: black;
+	background:#fff;
+}
+header:hover{
+	font-size: 74px;
+	transition-duration: 3s;
+	color: #ddd;
+	background:#999;
+}
+nav{
+	border: 1px solid black;
+}
+nav ul li {
+	border:1px solid black;
+	display: inline;
+	margin:0px auto;
+}
+ul{ list-style-type: none; }

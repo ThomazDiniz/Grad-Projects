@@ -1,0 +1,27 @@
+@charset "utf-8";
+body {
+	font-family: Arial, sans-serif;
+}
+form {
+	font-size: 1.5em;
+}
+.scrambled, input, button {
+	font-family: monospace;
+	font-size: 2em;
+}
+
+.input-resp{
+	width:300px !important;	
+}
+
+
+
+.borda-verde{
+	border: 3px solid #0F0;
+	color: #0F0;
+}
+
+.borda-vermelha{
+	border: 3px solid #F00;
+	color: #F00;;
+}

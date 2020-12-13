@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<!-- saved from url=(0071)http://www.dsc.ufcg.edu.br/~dalton/projsw/exercicios3/q04/resposta.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title></title>
+</head>
+<body>
+
+  <h1>h1 dinâmico</h1><p>Único parágrafo.</p>
+
+  <script>
+    $h1 = document.createElement("h1");
+    $h1.innerText = "h1 dinâmico";
+
+    $body = document.querySelector("body");
+    $p = document.querySelector("p");
+    $body.insertBefore($h1, $p);
+  </script>
+
+
+</body></html>

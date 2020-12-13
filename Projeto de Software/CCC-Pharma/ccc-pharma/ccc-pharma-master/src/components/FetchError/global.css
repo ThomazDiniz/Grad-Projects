@@ -1,0 +1,32 @@
+#errorContainer {
+    border-radius: 2px;
+}
+
+.red {
+    background-color: #f6dbdd;
+    color: red;
+}
+
+.green {
+    background-color: rgb(183, 224, 183);
+    color: green;
+}
+
+#errorContainer > button {
+    background-color: transparent;
+    color: red;
+    border: 1.25px solid red;
+    border-radius: 2px;
+    padding: .5em;
+    font-weight: bold;
+}
+
+#errorContainer > button:hover {
+    border: 1px solid steelblue;
+    color: steelblue;
+    border-radius: 2px;
+}
+
+#errorContainer .large {
+    padding: 2em;
+}

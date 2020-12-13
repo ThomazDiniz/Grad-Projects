@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>Tempo</h1>
+	<pre>
+		
+	</pre>
+	
+	<script type="text/javascript">
+		let p = document.querySelector("pre");
+		let url = "http://worldclockapi.com/api/json/utc/now";
+		function ok(dado){
+			p.innerHTML = dado.currentDateTime + "	|	" + dado.dayOfTheWeek;
+		}
+		fetch(url).
+		then(r=>r.json()).
+		then(ok);
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<style>
+	  p      { color: purple; }
+	  .outro { color: blue; }
+	  #abc   { color: green; }
+	</style>
+
+	<p id="abc" class="outro" style="color: gold;">Um</p>
+	<p>Dois</p>
+
+	<style>
+	  body    { color: yellow; }
+	  .oi > p { color: blue; }
+	  .oi p   { color: red; }
+	</style>
+
+	<p id="abc">Três</p>
+	<p class="outro">Quatro</p>
+	<div class="oi">
+	  <p>Cinco</p>
+	  <div>
+	    <p>Seis</p>
+	  </div>
+	</div>
+	<p>Sete</p>
+	<p class="abc" id="oito">Oito</p>
+	<p class="abc" id="nove">Nove</p>
+	
+<script>
+  $nove = document.querySelector("#nove");
+  $nove.style.color = "gold";
+</script>
+
+
+</body>
+</html>
